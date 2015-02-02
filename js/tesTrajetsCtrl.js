@@ -4,7 +4,6 @@ countryControllers.controller('tesTrajetsCtrl', ['$scope', '$routeParams', '$htt
             console.log(data);// $scope.country = data;
             $scope.user = data;
         });
-        //alert('douddda');
 
     }]);
 

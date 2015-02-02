@@ -2,46 +2,46 @@
     <!--<section class="rides" ng-controller="CountryDetailCtrl">-->
     <div class="backup-triangle"><a href="#home"><img src="img/backLeft.png" alt="retour à l'accueil"/></a></div>
     <section class="main-rides">
-        <h1>Axel</h1>
+        <h1>{{user.firstname}}</h1>
         <form method="post">
             <section class="main-layout">
                     <div class="title-form pdata"><img src="img/arrowDown.png" alt="ouvrir / cacher" class="onOff-pdata"/><span class="areaTitle">données personnelles</span></div>
                     <article class="personal-data">
                         <label for="email">email personnel</label><br>
-                        <input type="email" id="email" name="email" /><br>
+                        <input type="email" id="email" name="email" ng-model="user.email"/><br>
 
                         <label for="phone">téléphone</label><br>
-                        <input type="tel" id="phone" name="phone" /><br>
+                        <input type="tel" id="phone" name="phone" ng-model="user.phone"/><br>
                     </article>
 
                     <div class="title-form conf"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-conf"/><span class="areaTitle">confidentialité</span></div>
                     <article class="confidentiality">
-                        <input type="checkbox" id="hideEmail" name="hideEmail" />
+                        <input type="checkbox" id="hideEmail" name="hideEmail" ng-model="user.privacy.hideEmail" ng-checked="user.privacy.hideEmail"/>
                         <label for="hideEmail"><span></span> masquer mon email</label>
                         <br><br>
-                        <input type="checkbox" id="hideTel" name="hideTel" />
+                        <input type="checkbox" id="hideTel" name="hideTel" ng-model="user.privacy.hidePhone" ng-checked="user.privacy.hidePhone"/>
                         <label for="hideTel"><span></span> masquer mon numéro de téléphone</label>
                     </article>
 
                     <div class="title-form notif"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-notif"/><span class="areaTitle">notifications</span></div>
                     <article class="notifications">
                         <p>je suis averti par email lorsque quelqu'un ...</p>
-                        <input type="checkbox" id="subscribing" name="subscribing" />
+                        <input type="checkbox" id="subscribing" name="subscribing" ng-model="user.notifications.notifRegistration" ng-checked="user.notifications.notifRegistration" />
                         <label for="subscribing"><span></span> s'inscrit à l'un de mes trajets</label>
                         <br><br>
-                        <input type="checkbox" id="unsubscribing" name="unsubscribing" />
+                        <input type="checkbox" id="unsubscribing" name="unsubscribing" ng-model="user.notifications.notifUnsubscribe" ng-checked="user.notifications.notifUnsubscribe"/>
                         <label for="unsubscribing"><span></span> se désinscrit de l'un de mes trajets</label>
                         <br><br>
-                        <input type="checkbox" id="checking" name="checking" />
+                        <input type="checkbox" id="checking" name="checking" ng-model="user.notifications.notifComment" ng-checked="user.notifications.notifComment"/>
                         <label for="checking"><span></span> valide mon inscription</label>
                         <br><br>
-                        <input type="checkbox" id="removing" name="removing" />
+                        <input type="checkbox" id="removing" name="removing" ng-model="user.notifications.notifDeleteRide" ng-checked="user.notifications.notifDeleteRide"/>
                         <label for="removing"><span></span> supprime un des trajets auquel je suis inscrit</label>
                         <br><br>
-                        <input type="checkbox" id="updating" name="updating" />
+                        <input type="checkbox" id="updating" name="updating" ng-model="user.notifications.notifChange" ng-checked="user.notifications.notifChange"/>
                         <label for="updating"><span></span> modifie un des trajets auquel je suis inscrit</label>
                     </article>
-                    <input type="submit" value="enregistrer" id="save"/>
+                    <input type="submit" value="enregistrer" id="save" ng-click="submit()"/>
             </section>
         </form>
     </section>
