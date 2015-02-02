@@ -7,6 +7,10 @@ var app = angular.module("app", [
     'dataControllers'
 ]);
 
+//URL de l'API
+var apiPath ="http://covoiturag.cpnv-es.ch/api";
+
+
 app.config(function($routeProvider){
    $routeProvider
        .when('/home', {templateUrl: 'pages/home.html', controller: 'homeCtrl'})
