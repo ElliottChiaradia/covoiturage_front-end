@@ -1,0 +1,146 @@
+<section class="panel">
+    <!--<section class="rides" ng-controller="CountryDetailCtrl">-->
+    <div class="backup-triangle"><a href="#home"><img src="img/backLeft.png" alt="retour à l'accueil"/></a></div>
+    <section class="main-rides">
+        <h1>Création d'un trajet</h1>
+        <form method="post">
+            <section class="main-layout">
+                <div class="title-form pdata"><img src="img/arrowDown.png" alt="ouvrir / cacher" class="onOff-pdata"/><span class="areaTitle">localités</span></div>
+                <article class="personal-data">
+                    <label for="departure">départ</label><br>
+                    <input type="text" id="departure" name="departure" /><br>
+
+                    <label for="arrival">destination</label><br>
+                    <input type="text" id="arrival" name="arrival" /><br>
+                </article>
+
+                <div class="title-form conf"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-conf"/><span class="areaTitle">heures</span></div>
+                <article class="confidentiality">
+                    <label for="departure-time">heure de départ</label><br>
+                    <input type="time" id="departure-time" name="departure-time" /><br>
+
+                    <label for="arrival-time">heure d'arrivée</label><br>
+                    <input type="time" id="arrival-time" name="arrival-time" /><br>
+                </article>
+
+                <div class="title-form notif"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-notif"/><span class="areaTitle">récurrences</span></div>
+                <article class="notifications">
+                    <label for="arrival-time">jours </label>
+                    <div class="rec">
+                        <div class="carre-blanc"><p>lun</p></div>
+                        <div class="carre-blanc"><p>mar</p></div>
+                        <div class="carre-blanc"><p>mer</p></div>
+                        <div class="carre-vert"><p>jeu</p></div>
+                        <div class="carre-blanc"><p>ven</p></div>
+                        <div class="carre-vert"><p>sam</p></div>
+                        <div class="carre-blanc"><p>dim</p></div>
+                    </div>
+                    <br>
+
+                    <label for="arrival-time">période </label>
+                    <div class="rec">
+                        <select name="periode" class="pselect">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+
+
+                        <div class="carre-blanc"><p>sem</p></div>
+                        <div class="carre-vert"><p>mois</p></div>
+                    </div>
+
+                    <label for="startDate">du</label>
+                    <input type="date" id="startDate" name="startDate" />
+
+                    <label for="endDate">au</label>
+                    <input type="date" id="endDate" name="endDate" /><br>
+
+                </article>
+
+                <div class="title-form det"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-details"/><span class="areaTitle">détails</span></div>
+                <article class="details">
+                    <label for="rideDescription">description</label>
+                    <textarea name="rideDescription" rows="6" cols="30" id="rideDescription"></textarea>
+                </article>
+
+                <input type="submit" value="enregistrer" id="save"/>
+            </section>
+        </form>
+    </section>
+    <script>
+        //hide-show the areas
+        $(document).ready(function(){
+            //personal data
+            $('.pdata').click(function(){
+
+                if($(".personal-data").is(":hidden")) {
+                    //change the arrow's picture
+                    $('.onOff-pdata').attr('src','img/arrowDown.png');
+                    //show the div
+                    $('.personal-data').slideDown();
+                } else {
+                    //change the arrow's picture
+                    $('.onOff-pdata').attr('src','img/arrowRight.png');
+                    //hide the div
+                    $(".personal-data").slideUp();
+                }
+                return false;
+            })
+
+            //confidentiality
+            $('.conf').click(function(){
+                if($(".confidentiality").is(":hidden")) {
+                    //change the arrow's picture
+                    $('.onOff-conf').attr('src','img/arrowDown.png');
+                    //show the div
+                    $('.confidentiality').slideDown();
+                } else {
+                    //change the arrow's picture
+                    $('.onOff-conf').attr('src','img/arrowRight.png');
+                    //hide the div
+                    $(".confidentiality").slideUp();
+                }
+            })
+
+            //notifications
+            $('.notif').click(function(){
+                if($(".notifications").is(":hidden")) {
+                    //change the arrow's picture
+                    $('.onOff-notif').attr('src','img/arrowDown.png');
+                    //show the div
+                    $('.notifications').slideDown();
+                } else {
+                    //change the arrow's picture
+                    $('.onOff-notif').attr('src','img/arrowRight.png');
+                    //hide the div
+                    $(".notifications").slideUp();
+                }
+            })
+
+            //notifications
+            $('.det').click(function(){
+                if($(".details").is(":hidden")) {
+                    //change the arrow's picture
+                    $('.onOff-details').attr('src','img/arrowDown.png');
+                    //show the div
+                    $('.details').slideDown();
+                } else {
+                    //change the arrow's picture
+                    $('.onOff-details').attr('src','img/arrowRight.png');
+                    //hide the div
+                    $(".details").slideUp();
+                }
+            })
+        });
+    </script>
+</section>

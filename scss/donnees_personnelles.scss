@@ -1,0 +1,124 @@
+@import 'base';
+
+.main-layout{
+  position: relative;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+
+  background-color: $white;
+  opacity: $opacity;
+
+  article{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+
+  .personal-data{
+    text-align: left;
+  }
+
+  label{
+    color: $black;
+  }
+
+  input{
+    margin-bottom: 10px;
+
+    color: $black;
+  }
+
+  textarea{
+    width: 100%;
+  }
+
+  input[type="date"] {
+    width: 80px;
+    display: inline-block;
+  }
+  input[type="checkbox"] {
+    display:none;
+  }
+  input[type="checkbox"] + label span {
+    display:inline-block;
+    width:25px;
+    height:25px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url("../img/checkboxboth.png") left top no-repeat;
+    cursor:pointer;
+  }
+  input[type="checkbox"]:checked + label span {
+    background:url("../img/checkboxboth.png") -25px top no-repeat;
+  }
+
+
+}
+
+.main-rides{
+  overflow-y: scroll;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.confidentiality{
+  display: none;
+  padding-bottom: 10px;
+
+  text-align: left;
+  color: $black;
+
+}
+
+.notifications{
+  display: none;
+  padding-bottom: 10px;
+
+  text-align: left;
+  color: $black;
+
+  p{
+    color: $black;
+  }
+}
+
+#save{
+  height: 30px;
+  width: 100%;
+  margin-right: 8px;
+
+  background-color: $green;
+
+  border: none;
+
+  text-align: center;
+  color: $white;
+  font-family: $mainfont;
+  font-size: 1rem;
+
+}
+
+
+.title-form{
+  height: 30px;
+  width: 100%;
+  margin-bottom: 8px;
+
+  background-color: $green;
+
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  vertical-align: middle;
+
+  .areaTitle{
+    margin-left: -26px;
+  }
+
+  img{
+    float: left;
+    margin-top: 3px;
+    margin-left: 5px;
+  }
+}

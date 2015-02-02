@@ -1,0 +1,108 @@
+@import "compass";
+
+/* variables globales */
+$green: #0d924b;
+$lightgreen: #bae8ca;
+$violet: #6F1E9F;
+$white: #fff;
+$black: #000;
+$opacity: 0.76;
+$mainfont: Questrial, Arial;
+
+/* Police */
+@font-face {
+  font-family: 'Questrial';
+  src: url('../font/Questrial/Questrial-Regular.ttf');
+}
+
+//@font-face { 	font-family: "skog"; 	src: url('../font/skog.ttf'); }
+
+body{
+  /*background-image:url("../img/photoFond.jpg");
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  background-position: top;
+  background: url("../img/photoFond.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  */
+
+  color:$white;
+  font-family: $mainfont;
+
+  overflow:hidden;
+}
+
+.background {
+  z-index: -1;
+  position: fixed;
+  top:0px;
+  left: 0;
+  height:100%;
+  margin:0 auto;
+
+}
+
+.panel {
+   /*margin: 0em;
+   top:0;
+   left:0;
+   bottom:0;
+   right:0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  @include transition-duration(.5);*/
+}
+
+
+/*  .left{@include transform(translate3D(-100%,0,0));}
+
+  .right{@include transform(translate3D(100%,0,0));}*/
+
+
+
+  a{
+  text-decoration: none;
+  color:$white;
+}
+
+a:active{
+  text-decoration: none;
+  color:$white;
+  background-color:transparent;
+  border:0;
+}
+
+a:focus{
+  text-decoration: none;
+  color:$white;
+  background-color:transparent;
+  border:0;
+}
+
+a:link{
+  text-decoration: none;
+  color:$white;
+  background-color:transparent;
+  border:0;
+}
+a:hover{
+  text-decoration: none;
+  color:$white;
+  background-color:transparent;
+  border:0;
+}
+a:focus{
+  text-decoration: none;
+  background-color:transparent;
+  border:0;
+}
+h1{
+  font-size:190%;
+  text-align: center;
+}
+
+

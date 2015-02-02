@@ -1,0 +1,424 @@
+@import 'base';
+
+
+.bouton-loupe{
+  position: absolute;
+  width:59px;
+  height:58px;
+  top:0em;
+  right:0em;
+  z-index: 20;
+
+  background-image: url('../img/btnLoupe.png');
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.backup-triangle{
+  position:absolute;
+  height: 32px;
+  top: 0px;
+  left:0px;
+  z-index:3;
+}
+/*
+.main-rides-passager{
+  position: absolute;
+  top:45px;
+  left: 8px;
+  right: 8px;
+
+  overflow-y: scroll;
+  z-index: 1;
+
+  text-align: center;
+
+  .rides {
+    position: absolute;
+    top: 70px;
+    left: 8px;
+    right: 8px;
+
+    .ride {
+
+      margin-bottom: 4px;
+
+      font-size: 0.8rem;
+      text-align: left;
+    }
+  }
+}
+*/
+
+.main-rides-passager{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+
+  overflow-y: scroll;
+  z-index: 1;
+
+  text-align: center;
+
+  .rides {
+    position: absolute;
+    top: 70px;
+    left: 8px;
+    right: 8px;
+
+    .ride {
+
+      margin-bottom: 2px;
+
+      font-size: 0.8rem;
+      text-align: left;
+
+      ul {
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        list-style-type: none;
+
+        li {
+          padding-top: 2px;
+          padding-bottom: 2px;
+
+        }
+      }
+
+      ul li:nth-child(1) {
+        font-weight: bold;
+      }
+
+
+      .white {
+        background-color: $white;
+        opacity: $opacity;
+
+        color: $black;
+      }
+
+      .green {
+        background-color: $green;
+        opacity: $opacity;
+
+        color: $white;
+      }
+      /* ajoute un petit volan devant le trajet */
+      .driver {
+        background-image: url("../img/driver.png");
+        background-repeat: no-repeat;
+        background-position: 3px 3px;
+      }
+    }
+  }
+}
+
+.trajet-blanc {
+  width: 100%;
+  border: solid black 0px;
+  margin: 0px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  background-color: rgba(255,255,255,0.76);
+
+  color: $black;
+
+  tr {
+    height: 15px;
+  }
+
+  .villes {
+    width: 85%;
+  }
+
+  .dates {
+    width: 85%;
+    font-weight: bold;
+  }
+
+  .heure {
+    width: 15%;
+    text-align: center;
+  }
+  .carre-blanc {
+    margin-left: 1.5%;
+    float: left;
+    width: 11%;
+    height: 26px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border: 2px solid $green;
+    background-color: $white;
+    opacity: 1.5;
+    overflow: hidden;
+
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+
+  .carre-vert {
+    margin-left: 1.5%;
+    float: left;
+    width: 11%;
+    height: 26px;
+
+    text-align: center;
+
+    border: 2px solid $green;
+    background-color: $green;
+    opacity: 1.5;
+
+    color: $white;
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+}
+
+.trajet-vert {
+  width: 100%;
+  border: solid black 0px;
+  margin: 0px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  background-color: rgba(13,146,75,0.76);
+
+  color: $white;
+
+  tr {
+    height: 15px;
+  }
+
+  .villes {
+    width: 85%;
+  }
+
+  .dates {
+    width: 85%;
+    font-weight: bold;
+  }
+
+  .heure {
+    width: 15%;
+    text-align: center;
+  }
+  .carre-blanc {
+    margin-left: 1.5%;
+    float: left;
+    width: 11%;
+    height: 26px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border: 2px solid $green;
+    background-color: $white;
+    opacity: 1.5;
+    overflow: hidden;
+
+    color:$black;
+
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+
+  .carre-vert {
+    margin-left: 1.5%;
+    float: left;
+    width: 11%;
+    height: 26px;
+
+    text-align: center;
+
+    border: 2px solid $white;
+    background-color: $green;
+    opacity: 1.5;
+
+    color: $white;
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+}
+
+.top-recherche{
+  /* hide at start */
+  display: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  padding-top: 20px;
+  z-index: 10;
+  opacity: 0.9;
+
+  background-color: $white;
+
+  border-bottom: 2px solid $lightgreen;
+
+  ul{
+    margin-top: 1px;
+    li{
+      z-index: 30;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      list-style-type: none;
+
+      a{
+        margin: 0px;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        color: $black;
+      }
+
+    }
+
+  }
+}
+
+/* Barre de recherche */
+
+.cf:before, .cf:after{
+  content:"";
+  display:table;
+}
+
+.cf:after{
+  clear:both;
+}
+
+.cf{
+  zoom:1;
+}
+
+.form-wrapper {
+  position:absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  height:30px;
+  padding: 15px;
+  background: $white;
+  border-bottom:$lightgreen solid 1px;
+  z-index:2;
+  box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+
+}
+
+/* Form text input */
+
+.form-wrapper input {
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  //float: left;
+  border: 0;
+  background: #eee;
+}
+
+.form-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.form-wrapper input:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.form-wrapper input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Form submit button */
+.form-wrapper button {
+  overflow: visible;
+  float:left;
+ /* position: absolute;
+  top:50px;
+  right:34px;*/
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width:50px;
+  color: #fff;
+  text-transform: uppercase;
+  background: $green;
+  border-radius: 0 3px 3px 0;
+  text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}
+
+.form-wrapper button:hover{
+  background: #e54040;
+}
+
+.form-wrapper button:active,
+.form-wrapper button:focus{
+  background: #c42f2f;
+  outline: 0;
+}
+
+.form-wrapper button:hover:before{
+  border-right-color: #e54040;
+}
+
+.form-wrapper button:focus:before,
+.form-wrapper button:active:before{
+  border-right-color: #c42f2f;
+}
+
+.table-field{
+  z-index: 1000;
+  position: absolute;
+  top:8px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+}
+
+.search-field{
+  input{
+    width: 100%;
+  }
+}
+.search-button {
+  width: 70px;
+}
+.margin-search-field{
+  width:50px;
+}
+
+
+

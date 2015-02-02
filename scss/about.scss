@@ -1,0 +1,52 @@
+@import 'base';
+
+body{
+  background-color: white;
+}
+
+.backup{
+  position: absolute;
+  height: 32px;
+  top: 0;
+  left: 50%;
+  margin-left: -88px;
+
+  z-index: 10;
+}
+
+.main-layout-about{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left:8px;
+  padding-right:8px;
+  padding-bottom:8px;
+  padding-top:0px;
+
+  overflow-y: scroll;
+  z-index: 1;
+
+  text-align: center;
+  div{
+    padding-top:6px;
+    padding-bottom:10px;
+    padding-left:8px;
+    padding-right:8px;
+
+    background:$white;
+    opacity: $opacity;
+
+      p{
+        color:$black;
+        text-align: left;
+      }
+
+    p:first-child {
+      font-weight:bold;
+    }
+
+  }
+}
+

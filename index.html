@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="css/base.css" />
+        <link rel="stylesheet" type="text/css" href="css/home.css" />
+        <link rel="stylesheet" type="text/css" href="css/tes_trajets.css" />
+        <link rel="stylesheet" type="text/css" href="css/passager.css" />
+        <link rel="stylesheet" type="text/css" href="css/donnees_personnelles.css" />
+        <link rel="stylesheet" type="text/css" href="css/about.css" />
+        <link rel="stylesheet" type="text/css" href="css/blog.css" />
+        <link rel="stylesheet" type="text/css" href="css/creation_trajet.css" />
+        <link rel="stylesheet" type="text/css" href="css/details_trajet.css" />
+        <title>Covoiturage CPNV</title>
+
+    </head>
+    <body>
+        <img class="background" src="img/panoramique.jpg" />
+        <section class="view" ng-view>
+        </section>
+        <div></div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/tesTrajetsCtrl.js"></script>
+        <script src="js/homeCtrl.js"></script>
+        <script src="js/menu.js"></script>
+
+    </body>
+</html>

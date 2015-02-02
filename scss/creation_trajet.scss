@@ -1,0 +1,61 @@
+@import 'base';
+
+.rec {
+
+  .carre-blanc {
+    margin-right: 4px;
+    display: inline-block;
+    width: 30px;
+    height: 26px;
+    padding: 4px;
+    margin-bottom: 5px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border: 2px solid $green;
+    background-color: $white;
+    opacity: 1.5;
+    overflow: hidden;
+
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+
+  .carre-vert {
+    margin-right: 4px;
+    display: inline-block;
+    width: 30px;
+    height: 26px;
+    padding: 4px;
+    margin-bottom: 5px;
+
+    text-align: center;
+
+    border: 2px solid $green;
+    background-color: $green;
+    opacity: 1.5;
+
+    color: $white;
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+
+  .pselect{
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+}
+
+.details{
+  display: none;
+  padding-bottom: 10px;
+
+  text-align: left;
+  color: $black;
+
+}

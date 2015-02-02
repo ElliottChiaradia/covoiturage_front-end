@@ -1,0 +1,447 @@
+@import 'base';
+
+
+.bouton-loupe{
+  position: absolute;
+  width:59px;
+  height:58px;
+  top:0em;
+  right:0em;
+  z-index: 20;
+
+  background-image: url('../img/btnLoupe.png');
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.backup-triangle{
+  position:absolute;
+  height: 32px;
+  top: 0px;
+  left:0px;
+  z-index:3;
+}
+
+.main-rides-passager{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+
+  overflow-y: scroll;
+  z-index: 1;
+
+  text-align: center;
+
+  .rides {
+    position: absolute;
+    top: 70px;
+    left: 8px;
+    right: 8px;
+
+    .ride {
+
+      margin-bottom: 2px;
+
+      font-size: 0.8rem;
+      text-align: left;
+
+      ul {
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        list-style-type: none;
+
+        li {
+          padding-top: 2px;
+          padding-bottom: 2px;
+
+        }
+      }
+
+      ul li:nth-child(1) {
+        font-weight: bold;
+      }
+
+
+      .white {
+        background-color: $white;
+        opacity: $opacity;
+
+        color: $black;
+      }
+
+      .green {
+        background-color: $green;
+        opacity: $opacity;
+
+        color: $white;
+      }
+      /* ajoute un petit volan devant le trajet */
+      .driver {
+        background-image: url("../img/driver.png");
+        background-repeat: no-repeat;
+        background-position: 3px 3px;
+      }
+    }
+  }
+}
+
+.trajet-blanc {
+  width: 100%;
+  border: solid black 0px;
+  margin: 0px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  background-color: rgba(255,255,255,0.76);
+
+  color: $black;
+
+  tr {
+    height: 15px;
+  }
+
+  .villes {
+    width: 85%;
+  }
+
+  .dates {
+    width: 85%;
+    font-weight: bold;
+  }
+
+  .heure {
+    width: 15%;
+    text-align: center;
+  }
+  .carre-blanc {
+    margin-left: 1.5%;
+    float: left;
+    width: 11%;
+    height: 26px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border: 2px solid $green;
+    background-color: $white;
+    opacity: 1.5;
+    overflow: hidden;
+
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+
+  .carre-vert {
+    margin-left: 1.5%;
+    float: left;
+    width: 11%;
+    height: 26px;
+
+    text-align: center;
+
+    border: 2px solid $green;
+    background-color: $green;
+    opacity: 1.5;
+
+    color: $white;
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+}
+
+.trajet-vert {
+  width: 100%;
+  border: solid black 0px;
+  margin: 0px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  background-color: rgba(13,146,75,0.76);
+
+  color: $white;
+
+  tr {
+    height: 15px;
+  }
+
+  .villes {
+    width: 85%;
+  }
+
+  .dates {
+    width: 85%;
+    font-weight: bold;
+  }
+
+  .heure {
+    width: 15%;
+    text-align: center;
+  }
+  .carre-blanc {
+    margin-left: 1.5%;
+    float: left;
+    width: 11%;
+    height: 26px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border: 2px solid $green;
+    background-color: $white;
+    opacity: 1.5;
+    overflow: hidden;
+
+    color:$black;
+
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+
+  .carre-vert {
+    margin-left: 1.5%;
+    float: left;
+    width: 11%;
+    height: 26px;
+
+    text-align: center;
+
+    border: 2px solid $white;
+    background-color: $green;
+    opacity: 1.5;
+
+    color: $white;
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+}
+
+.top-recherche{
+  /* hide at start */
+  display: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  padding-top: 20px;
+  z-index: 10;
+  opacity: 0.9;
+
+  background-color: $white;
+
+  border-bottom: 2px solid $lightgreen;
+
+  ul{
+    margin-top: 1px;
+    li{
+      z-index: 30;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      list-style-type: none;
+
+      a{
+        margin: 0px;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        color: $black;
+      }
+
+    }
+
+  }
+}
+
+/* Barre de recherche */
+
+.cf:before, .cf:after{
+  content:"";
+  display:table;
+}
+
+.cf:after{
+  clear:both;
+}
+
+.cf{
+  zoom:1;
+}
+
+
+.main-layout-details{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left:8px;
+  padding-right:8px;
+  padding-bottom:0px;
+  padding-top:0px;
+
+  overflow-y: scroll;
+
+  color:$black;
+
+  .map {
+    position: relative;
+    top:0;
+    left: 0;
+    width:100%;
+    height:220px;
+    margin:0 auto;
+    z-index: 1;
+    background-image:url("../img/fondMap.PNG");
+  }
+  .second-layout-details{
+    position: relative;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding-left:8px;
+    padding-right:8px;
+    padding-bottom:8px;
+    padding-top:8px;
+    z-index: 1;
+    background-color: rgba(253,253,253,0.76);
+  }
+}
+
+.tableau-details{
+  width: 100%;
+  margin: 0px;
+  tr{
+    td {
+      vertical-align: top;
+      padding-left: 4px;
+      padding-top: 2px;
+    }
+    td:first-child{
+      width:90px;
+    }
+  }
+}
+
+.tableau-calendrier{
+  width: 100%;
+  margin: 0px;
+  padding-top:8px;
+  tr{
+    td{
+      vertical-align: middle;
+      padding-left:1px;
+      padding-top:0px;
+      border:0px black solid;
+      text-align: center;
+      img{
+        margin-left:4px;
+        height:8px;
+        width:8px;
+      }
+
+    }
+    td:first-child{
+      width:90px;
+    }
+  }
+
+  .carre-blanc {
+    margin-left: 1.5%;
+    float: left;
+    width: 100%;
+    height: 26px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border: 2px solid $green;
+    background-color: $white;
+    opacity: 1.5;
+    overflow: hidden;
+
+    color:$black;
+
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+
+  .carre-vert {
+    margin-left: 1.5%;
+    float: left;
+    width: 100%;
+    height: 26px;
+
+    text-align: center;
+
+    border: 2px solid $green;
+    background-color: $green;
+    opacity: 1.5;
+
+    color: $white;
+    p {
+      margin: 0px;
+      padding-top: 6px;
+    }
+  }
+
+  .carre-noir {
+    margin-left: 1.5%;
+    float: left;
+    width: 100%;
+    height:36px;
+    margin:0;
+    padding:0;
+    vertical-align: top;
+
+    text-align: center;
+
+    border: 2px solid transparent;
+    color: $black;
+
+    img{
+      margin-left:4px;
+      height:8px;
+      width:8px;
+    }
+
+  }
+}
+
+#save_registration{
+  height: 30px;
+  width: 100%;
+
+  background-color: $green;
+
+  border: none;
+  margin-top:16px;
+  text-align: center;
+  color: $white;
+  font-family: $mainfont;
+  font-size: 1rem;
+
+}
+
+
+

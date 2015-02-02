@@ -1,0 +1,60 @@
+<section class="panel">
+    <section class="country" ng-controller="CountryDetailCtrl">
+        <a href="#home" class="back"> Retour</a>
+        <h2>{{country.country.name}}</h2>
+        <ul class="generals">
+            <li>Capitale : {{country.country.capital}}</li>
+            <li>Monnaie : {{country.country.currency}}</li>
+            <li>Cours : {{country.country.value}}</li>
+            <li>Langue officielle : {{country.country.language}}</li>
+            <li>Population : {{country.country.population}}</li>
+        </ul>
+        <h2>Programme</h2>
+        <h3>{{country.firstvisit.town}}</h3>
+        <article class="info">
+            <h4>{{country.firstvisit.visit.first.name}}</h4>
+            <img src="{{country.firstvisit.visit.first.picture}}" alt="{{country.firstvisit.visit.first.name}}"/>
+            <p>{{country.firstvisit.visit.first.description}}</p>
+            <img src="{{country.firstvisit.visit.first.location}}" alt="{{country.firstvisit.visit.first.name}}"/>
+        </article>
+        <article class="info">
+            <h4>{{country.firstvisit.visit.second.name}}</h4>
+            <img src="{{country.firstvisit.visit.second.picture}}" alt="{{country.firstvisit.visit.second.name}}"/>
+            <p>{{country.firstvisit.visit.second.description}}</p>
+            <img src="{{country.firstvisit.visit.second.location}}" alt="{{country.firstvisit.visit.second.name}}"/>
+        </article>
+        <article class="info">
+            <h4>{{country.firstvisit.visit.third.name}}</h4>
+            <img src="{{country.firstvisit.visit.third.picture}}" alt="{{country.firstvisit.visit.third.name}}"/>
+            <p>{{country.firstvisit.visit.third.description}}</p>
+            <img src="{{country.firstvisit.visit.third.location}}" alt="{{country.firstvisit.visit.third.name}}"/>
+        </article>
+        <article class="info">
+            <h4>Astuces</h4>
+            <p>{{country.firstvisit.tips}}</p>
+        </article>
+
+        <h3>{{country.secondvisit.town}}</h3>
+        <article class="info">
+            <h4>{{country.secondvisit.visit.first.name}}</h4>
+            <img src="{{country.secondvisit.visit.first.picture}}" alt="{{country.secondvisit.visit.first.name}}"/>
+            <p>{{country.secondvisit.visit.first.description}}</p>
+            <img src="{{country.secondvisit.visit.first.location}}" alt="{{country.secondvisit.visit.first.name}}"/>
+        </article>
+        <article class="info">
+            <h4>{{country.secondvisit.visit.second.name}}</h4>
+            <img src="{{country.secondvisit.visit.second.picture}}" alt="{{country.secondvisit.visit.second.name}}"/>
+            <p>{{country.secondvisit.visit.second.description}}</p>
+            <img src="{{country.secondvisit.visit.second.location}}" alt="{{country.secondvisit.visit.second.name}}"/>
+        </article>
+        <article class="info">
+            <h4>{{country.secondvisit.visit.third.name}}</h4>
+            <img src="{{country.secondvisit.visit.third.picture}}" alt="{{country.secondvisit.visit.third.name}}"/>
+            <p>{{country.secondvisit.visit.third.description}}</p>
+            <img src="{{country.secondvisit.visit.third.location}}" alt="{{country.secondvisit.visit.third.name}}"/>
+        </article>
+        <article class="info">
+            <p>{{country.secondvisit.tips}}</p>
+        </article>
+    </section>
+</section>
