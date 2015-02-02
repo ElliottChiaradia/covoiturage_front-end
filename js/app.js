@@ -10,7 +10,29 @@ var app = angular.module("app", [
 //URL de l'API
 var apiPath ="http://covoiturag.cpnv-es.ch/api";
 
+//au moment de la connexion (avec email et mdp cpnv) création d'un espace dans le localstorage où sont stocké l'id et le token de l'utilisateur (en dure pour l'instant puis pris depuis l'API)
+//id de l'utilisateur
+window.localStorage.setItem( 'userId', '103');
+//token de l'utilisateur
+window.localStorage.setItem( 'userToken', 'dd34a21535e2d646f0ac8ce23ba39955');
 
+//pour détruire un item du local storage :
+//window.localStorage.removeItem( 'item_name' );
+
+//à chaque requête, vérifier que le token existe. Si non, demander la connexion
+function checkIfTokenExists(){
+
+    var exists = false;
+    var tokenValue = window.localStorage.getItem( 'userToken' );
+
+    if(tokenValue){
+        exists = tokenValue;
+    }
+
+    return exists;
+}
+
+//gestion des routes et des controllers associés
 app.config(function($routeProvider){
    $routeProvider
        .when('/home', {templateUrl: 'pages/home.html', controller: 'homeCtrl'})

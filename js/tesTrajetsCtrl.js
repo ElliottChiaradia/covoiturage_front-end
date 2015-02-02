@@ -1,10 +1,17 @@
 countryControllers.controller('tesTrajetsCtrl', ['$scope', '$routeParams', '$http',
     function($scope, $routeParams, $http) {
-        $http.get(apiPath+'/users/1?token=asdf').success(function(data) {
-            console.log(data);// $scope.country = data;
-            $scope.user = data;
-        });
-        //alert('douddda');
+        if (checkIfTokenExists()) {
+            //on prend le token (puisqu'il existe)
+            tokenValue = window.localStorage.getItem( 'userToken' );
+
+            //on effectue la requête http
+            $http.get(apiPath + '/users/1?token=' + tokenValue).success(function (data) {
+                //console.log(data);
+                $scope.user = data;
+            });
+        }else{
+            alert('Pas de token trouvé !');
+        }
 
     }]);
 
