@@ -4,12 +4,17 @@ countryControllers.controller('donneesPersonnellesCtrl', ['$scope', '$routeParam
             console.log(data);
             $scope.user = data;
 
-            $scope.submit = function () {
-               alert('coucou');
-            };
-
-
         });
+        $scope.submit = function () {
+            alert('coucou');
+            $http.put(apiPath+'/users/1?token=asdf',
+                $scope.user).success(function(data) {
+                console.log($scope.user);
+                 //= data;
+                    alert('coucou2');
+
+            });
+        };
     }]);
 
 
