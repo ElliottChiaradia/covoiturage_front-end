@@ -23,7 +23,7 @@ angular.module('app').filter('date', function($filter)
 });
 
 //URL de l'API
-var apiPath ="http://covoiturag.cpnv-es.ch/api";
+var apiPath ="https://covoiturag.cpnv-es.ch/api";
 
 //Redirection
 function redirect(){
@@ -35,6 +35,7 @@ function errorTreatment(status){
     switch(status){
         case 401:
             redirect();
+            window.localStorage.removeItem("userToken");
             window.localStorage.setItem( 'error', 401);
             break;
         case 402:
@@ -57,9 +58,9 @@ function errorTreatment(status){
 
 //au moment de la connexion (avec email et mdp cpnv) création d'un espace dans le localstorage où sont stocké l'id et le token de l'utilisateur (en dure pour l'instant puis pris depuis l'API)
 //id de l'utilisateur
-window.localStorage.setItem( 'userId', '103');
+//window.localStorage.setItem( 'userId', '103');
 //token de l'utilisateur
-window.localStorage.setItem( 'userToken', 'dd34a21535e2d646f0ac8ce23ba39955a');
+//window.localStorage.setItem( 'userToken', 'dd34a21535e2d646f0ac8ce23ba39955');
 
 //pour détruire un item du local storage :
 //window.localStorage.removeItem( 'item_name' );
