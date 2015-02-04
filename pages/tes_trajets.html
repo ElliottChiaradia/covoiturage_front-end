@@ -4,61 +4,11 @@
     <section class="main-rides">
         <h1>Tes trajets</h1>
         <section class="rides">
-            <article class="ride">
-                <ul class="white driver">
-                    <li>Sainte-Croix - Yverdon-les-bains</li>
-                    <li>01.07.2015 - 01.08.2015</li>
-                    <li>08h02 - 09h034</li>
-                   <li> {{user.firstname}}</li>
-                </ul>
-            </article>
-            <article class="ride">
-                <ul class="green">
-                    <li>Sainte-Croix - Yverdon-les-bains</li>
-                    <li>01.07.2015 - 01.08.2015</li>
-                    <li>08h02 - 09h034</li>
-                </ul>
-            </article>
-            <article class="ride">
-                <ul class="white driver">
-                    <li>Sainte-Croix - Yverdon-les-bains</li>
-                    <li>01.07.2015 - 01.08.2015</li>
-                    <li>08h02 - 09h034</li>
-                </ul>
-            </article>
-            <article class="ride">
-                <ul class="green driver">
-                    <li>Sainte-Croix - Yverdon-les-bains</li>
-                    <li>01.07.2015 - 01.08.2015</li>
-                    <li>08h02 - 09h034</li>
-                </ul>
-            </article>
-            <article class="ride">
-                <ul class="white driver">
-                    <li>Sainte-Croix - Yverdon-les-bains</li>
-                    <li>01.07.2015 - 01.08.2015</li>
-                    <li>08h02 - 09h034</li>
-                </ul>
-            </article>
-            <article class="ride">
-                <ul class="green">
-                    <li>Sainte-Croix - Yverdon-les-bains</li>
-                    <li>01.07.2015 - 01.08.2015</li>
-                    <li>08h02 - 09h034</li>
-                </ul>
-            </article>
-            <article class="ride">
-                <ul class="white driver">
-                    <li>Sainte-Croix - Yverdon-les-bains</li>
-                    <li>01.07.2015 - 01.08.2015</li>
-                    <li>08h02 - 09h034</li>
-                </ul>
-            </article>
-            <article class="ride">
-                <ul class="green driver">
-                    <li>Sainte-Croix - Yverdon-les-bains</li>
-                    <li>01.07.2015 - 01.08.2015</li>
-                    <li>08h02 - 09h034</li>
+            <article class="ride" ng-repeat="ride in rides" >
+                <ul class="" ng-class="{'driver': ride.isDriver, 'white': $even, 'green': $odd}">
+                    <li>{{ride.departuretown.name}} - {{ride.arrivaltown.name}}</li>
+                    <li>{{ride.startdate | date}} - {{ride.enddate | date}}</li>
+                    <li>{{ride.departure}} - {{ride.arrival}}</li>
                 </ul>
             </article>
         </section>
