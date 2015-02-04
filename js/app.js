@@ -60,30 +60,17 @@ function errorTreatment(status){
 //id de l'utilisateur
 //window.localStorage.setItem( 'userId', '103');
 //token de l'utilisateur
-//window.localStorage.setItem( 'userToken', 'dd34a21535e2d646f0ac8ce23ba39955');
+
 
 //pour détruire un item du local storage :
 //window.localStorage.removeItem( 'item_name' );
-
-//à chaque requête, vérifier que le token existe. Si non, demander la connexion
-function checkIfTokenExists(){
-
-    var exists = false;
-    var tokenValue = window.localStorage.getItem( 'userToken' );
-
-    if(tokenValue){
-        exists = tokenValue;
-    }
-
-    return exists;
-}
 
 function getToken(){
     var tokenValue =  window.localStorage.getItem('userToken');
     if(tokenValue){
         return tokenValue;
     }else{
-        window.location("/#/home");
+        window.location.href = "index.html";
         return false;
     }
 }
@@ -97,7 +84,7 @@ app.config(function($routeProvider){
        .when('/home', {templateUrl: 'pages/home.html', controller: 'homeCtrl'})
        .when('/tes_trajets', {templateUrl: 'pages/tes_trajets.html', controller: 'tesTrajetsCtrl'})
        .when('/conducteur', {templateUrl: 'pages/creation_trajet.html'})
-       .when('/passager', {templateUrl: 'pages/passager.html'})
+       .when('/passager', {templateUrl: 'pages/passager.html', controller: 'passagerCtrl'})
        .when('/menu', {templateUrl: 'pages/menu.html'})
        .when('/donnees_personnelles', {templateUrl: 'pages/donnees_personnelles.html',  controller: 'donneesPersonnellesCtrl'})
        .when('/about', {templateUrl: 'pages/about.html'})
@@ -105,4 +92,4 @@ app.config(function($routeProvider){
        .when('/details', {templateUrl: 'pages/details_trajet.html'})
        .otherwise({redirectTo: '/home'});
 });
-countryControllers = angular.module('dataControllers',[]);
+mainControllers = angular.module('dataControllers',[]);

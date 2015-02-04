@@ -1,4 +1,4 @@
-countryControllers.controller('donneesPersonnellesCtrl', ['$scope', '$routeParams', '$http',
+mainControllers.controller('donneesPersonnellesCtrl', ['$scope', '$routeParams', '$http',
     function($scope, $routeParams, $http) {
 $http.get(apiPath+'/users/'+getId()+'?token='+getToken()).success(function(data) {
     console.log(data);
