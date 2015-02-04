@@ -53,7 +53,7 @@ app.config(function($routeProvider){
        .when('/home', {templateUrl: 'pages/home.html', controller: 'homeCtrl'})
        .when('/tes_trajets', {templateUrl: 'pages/tes_trajets.html', controller: 'tesTrajetsCtrl'})
        .when('/conducteur', {templateUrl: 'pages/creation_trajet.html'})
-       .when('/passager', {templateUrl: 'pages/passager.html'})
+       .when('/passager', {templateUrl: 'pages/passager.html', controller: 'passagerCtrl'})
        .when('/menu', {templateUrl: 'pages/menu.html'})
        .when('/donnees_personnelles', {templateUrl: 'pages/donnees_personnelles.html',  controller: 'donneesPersonnellesCtrl'})
        .when('/about', {templateUrl: 'pages/about.html'})
