@@ -4,8 +4,23 @@ document.addEventListener('deviceready', function(){
 
 var app = angular.module("app", [
     'ngRoute',
-    'dataControllers'
+    'dataControllers',
+    'angular-loading-bar'
 ]);
+
+//date format
+angular.module('app').filter('date', function($filter)
+{
+    return function(input)
+    {
+        if(input == null){ return ""; }
+
+        var newDate = new Date(input);
+
+        return ("0" + newDate.getDate()).slice(-2)+'.'+("0" + (newDate.getMonth() + 1)).slice(-2)+'.'+newDate.getFullYear();
+
+    };
+});
 
 //URL de l'API
 var apiPath ="http://covoiturag.cpnv-es.ch/api";
