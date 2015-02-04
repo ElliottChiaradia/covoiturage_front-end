@@ -59,30 +59,17 @@ function errorTreatment(status){
 //id de l'utilisateur
 window.localStorage.setItem( 'userId', '103');
 //token de l'utilisateur
-window.localStorage.setItem( 'userToken', 'dd34a21535e2d646f0ac8ce23ba39955a');
+window.localStorage.setItem( 'userToken', 'dd34a21535e2d646f0ac8ce23ba39955');
 
 //pour détruire un item du local storage :
 //window.localStorage.removeItem( 'item_name' );
-
-//à chaque requête, vérifier que le token existe. Si non, demander la connexion
-function checkIfTokenExists(){
-
-    var exists = false;
-    var tokenValue = window.localStorage.getItem( 'userToken' );
-
-    if(tokenValue){
-        exists = tokenValue;
-    }
-
-    return exists;
-}
 
 function getToken(){
     var tokenValue =  window.localStorage.getItem('userToken');
     if(tokenValue){
         return tokenValue;
     }else{
-        window.location("/#/home");
+        window.location.href = "index.html";
         return false;
     }
 }
@@ -104,4 +91,4 @@ app.config(function($routeProvider){
        .when('/details', {templateUrl: 'pages/details_trajet.html'})
        .otherwise({redirectTo: '/home'});
 });
-countryControllers = angular.module('dataControllers',[]);
+mainControllers = angular.module('dataControllers',[]);
