@@ -1,5 +1,6 @@
 countryControllers.controller('tesTrajetsCtrl', ['$scope', '$routeParams', '$http',
     function($scope, $routeParams, $http) {
+
         if (checkIfTokenExists()) {
             //on prend le token (puisqu'il existe)
             tokenValue = window.localStorage.getItem( 'userToken' );
