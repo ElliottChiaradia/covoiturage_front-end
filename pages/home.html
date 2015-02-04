@@ -1,56 +1,55 @@
 
 
 <section class="panel">
-    <!--<div class="layout-black"></div>-->
-    <div class="menu-principal"></div>
-    <div class="logo-principal"></div>
+    <div class=layout-black ng-style="aCacher"></div>
+     <div class="menu-principal"></div>
+     <div class="logo-principal"></div>
 
-    <a class="lien" href="#conducteur">
-        <div class="btn-vertical-left">
-        </div>
-    </a>
+     <a class="lien" href="#conducteur">
+         <div class="btn-vertical-left">
+         </div>
+     </a>
 
-    <a class="lien" href="#passager">
-        <div class="btn-vertical-right">
-        </div>
-    </a>
+     <a class="lien" href="#passager">
+         <div class="btn-vertical-right">
+         </div>
+     </a>
 
-    <a class="lien" href="#tes_trajets">
-        <div class="btn-horizontal-bas">
-        </div>
-    </a>
+     <a class="lien" href="#tes_trajets">
+         <div class="btn-horizontal-bas">
+         </div>
+     </a>
 
-    <div>
-        {{home.firstname}}
-    </div>
+     <div>
+         {{home.firstname}}
+     </div>
 
-    <form method="post">
-        <!--<section class="main-layout-login">
-            <div class="title-form pdata">login</div>
-            <article class="login">
-                <label for="login_mail">e-mail</label><br>
-                <input type="email" id="login_mail" name="mail" /><br>
+     <form method="post" >
+         <section class="main-layout-login" ng-style="aCacher">
+             <div class="title-form pdata">login</div>
+             <article class="login">
+                 <label for="login_mail">e-mail</label><br>
+                 <input type="email" id="login_mail" name="mail" /><br>
 
-                <label for="login_password">mot de passe</label><br>
-                <input type="password" id="login_password" name="password" /><br>
-                <input type="submit" value="se connecter" id="se_connecter"/>
-                <p>L'accès est disponible exclusivement aux collaborateurs du CPNV</p>
-            </article>
-            </section>
-            -->
+                 <label for="login_password">mot de passe</label><br>
+                 <input type="password" id="login_password" name="password" /><br>
+                 <input type="submit" value="se connecter" id="se_connecter" ng-click="connect()"/>
+                 <p>L'accès est disponible exclusivement aux collaborateurs du CPNV</p>
+                 <p>{{errorValue}}</p>
+             </article>
+         </section>
+     </form>
 
-        </form>
+         <script>
+             //menu loading
+             $(document).ready(function(){
+                 var options ={
+                     element1: "Données personnelles",
+                     element2: "Blog",
+                     element3: "About"
+                 };
+                 $("menu-principal").menu(options);
+             });
+         </script>
 
-        <script>
-            //menu loading
-            $(document).ready(function(){
-                var options ={
-                    element1: "Données personnelles",
-                    element2: "Blog",
-                    element3: "About"
-                };
-                $("menu-principal").menu(options);
-            });
-        </script>
-
-    </section>
+     </section>
