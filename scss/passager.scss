@@ -62,6 +62,20 @@
 
   text-align: center;
 
+  .white {
+    background-color: $white;
+    opacity: $opacity;
+
+    color: $black;
+  }
+
+  .green {
+    background-color: $green;
+    opacity: $opacity;
+
+    color: $white;
+  }
+
   .rides {
     position: absolute;
     top: 70px;
@@ -419,6 +433,9 @@
 .margin-search-field{
   width:50px;
 }
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-<section class="panel">
+<section class="panel" ng-controller="passagerCtrl">
     <!--<section class="rides" ng-controller="CountryDetailCtrl">-->
     <div class="backup-triangle"><a href="#home"><img src="img/backLeft.png" alt="retour à l'accueil"/></a></div>
 
@@ -42,6 +42,7 @@
                     </table>
             </article>
           </a>
+          <a href="#details">
             <article class="ride">
                 <table class="trajet-vert">
                     <tr>
@@ -65,173 +66,27 @@
                     </tr>
                 </table>
             </article>
-            <article class="ride">
-                <table class="trajet-blanc">
-                    <tr>
-                        <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                    </tr>
-                    <tr>
-                        <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                    </tr>
-                    <tr>
-                        <td class="jours" colspan="2">
-                            <div class="rec">
-                                <div class="carre-blanc"><p>Lun</p></div>
-                                <div class="carre-blanc"><p>Mar</p></div>
-                                <div class="carre-blanc"><p>Mer</p></div>
-                                <div class="carre-vert"><p>Jeu</p></div>
-                                <div class="carre-blanc"><p>Ven</p></div>
-                                <div class="carre-vert"><p>Sam</p></div>
-                                <div class="carre-blanc"><p>Dim</p></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-            <article class="ride">
-                <table class="trajet-vert">
-                    <tr>
-                        <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                    </tr>
-                    <tr>
-                        <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                    </tr>
-                    <tr>
-                        <td class="jours" colspan="2">
-                            <div class="rec">
-                                <div class="carre-blanc"><p>Lun</p></div>
-                                <div class="carre-blanc"><p>Mar</p></div>
-                                <div class="carre-blanc"><p>Mer</p></div>
-                                <div class="carre-vert"><p>Jeu</p></div>
-                                <div class="carre-blanc"><p>Ven</p></div>
-                                <div class="carre-vert"><p>Sam</p></div>
-                                <div class="carre-blanc"><p>Dim</p></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </article>
+          </a>
+            <!--ici-->
+          <a href="#details">
+            <article class="" ng-repeat="ride in rides" ng-class="{'white': $even, 'green': $odd}">
+                <ul>
+                    <li>{{ride.departuretown.name}} - {{ride.arrivaltown.name}}</li>
+                    <li>{{ride.startdate | date}} - {{ride.enddate | date}}</li>
+                    <li>{{ride.departure}} - {{ride.arrival}}</li>
+                </ul>
+                <div class="rec">
+                    <div class="carre-blanc"><p>Lun</p></div>
+                    <div class="carre-blanc"><p>Mar</p></div>
+                    <div class="carre-blanc"><p>Mer</p></div>
+                    <div class="carre-vert"><p>Jeu</p></div>
+                    <div class="carre-blanc"><p>Ven</p></div>
+                    <div class="carre-vert"><p>Sam</p></div>
+                    <div class="carre-blanc"><p>Dim</p></div>
+                </div>
 
-            <article class="ride">
-                <table class="trajet-blanc">
-                    <tr>
-                        <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                    </tr>
-                    <tr>
-                        <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                    </tr>
-                    <tr>
-                        <td class="jours" colspan="2">
-                            <div class="rec">
-                                <div class="carre-blanc"><p>Lun</p></div>
-                                <div class="carre-blanc"><p>Mar</p></div>
-                                <div class="carre-blanc"><p>Mer</p></div>
-                                <div class="carre-vert"><p>Jeu</p></div>
-                                <div class="carre-blanc"><p>Ven</p></div>
-                                <div class="carre-vert"><p>Sam</p></div>
-                                <div class="carre-blanc"><p>Dim</p></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
             </article>
-
-            <article class="ride">
-                <table class="trajet-vert">
-                    <tr>
-                        <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                    </tr>
-                    <tr>
-                        <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                    </tr>
-                    <tr>
-                        <td class="jours" colspan="2">
-                            <div class="rec">
-                                <div class="carre-blanc"><p>Lun</p></div>
-                                <div class="carre-blanc"><p>Mar</p></div>
-                                <div class="carre-blanc"><p>Mer</p></div>
-                                <div class="carre-vert"><p>Jeu</p></div>
-                                <div class="carre-blanc"><p>Ven</p></div>
-                                <div class="carre-vert"><p>Sam</p></div>
-                                <div class="carre-blanc"><p>Dim</p></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-
-            <article class="ride">
-                <table class="trajet-blanc">
-                    <tr>
-                        <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                    </tr>
-                    <tr>
-                        <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                    </tr>
-                    <tr>
-                        <td class="jours" colspan="2">
-                            <div class="rec">
-                                <div class="carre-blanc"><p>Lun</p></div>
-                                <div class="carre-blanc"><p>Mar</p></div>
-                                <div class="carre-blanc"><p>Mer</p></div>
-                                <div class="carre-vert"><p>Jeu</p></div>
-                                <div class="carre-blanc"><p>Ven</p></div>
-                                <div class="carre-vert"><p>Sam</p></div>
-                                <div class="carre-blanc"><p>Dim</p></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-
-            <article class="ride">
-                <table class="trajet-vert">
-                    <tr>
-                        <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                    </tr>
-                    <tr>
-                        <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                    </tr>
-                    <tr>
-                        <td class="jours" colspan="2">
-                            <div class="rec">
-                                <div class="carre-blanc"><p>Lun</p></div>
-                                <div class="carre-blanc"><p>Mar</p></div>
-                                <div class="carre-blanc"><p>Mer</p></div>
-                                <div class="carre-vert"><p>Jeu</p></div>
-                                <div class="carre-blanc"><p>Ven</p></div>
-                                <div class="carre-vert"><p>Sam</p></div>
-                                <div class="carre-blanc"><p>Dim</p></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-
-            <article class="ride">
-                <table class="trajet-blanc">
-                    <tr>
-                        <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                    </tr>
-                    <tr>
-                        <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                    </tr>
-                    <tr>
-                        <td class="jours" colspan="2">
-                            <div class="rec">
-                                <div class="carre-blanc"><p>Lun</p></div>
-                                <div class="carre-blanc"><p>Mar</p></div>
-                                <div class="carre-blanc"><p>Mer</p></div>
-                                <div class="carre-vert"><p>Jeu</p></div>
-                                <div class="carre-blanc"><p>Ven</p></div>
-                                <div class="carre-vert"><p>Sam</p></div>
-                                <div class="carre-blanc"><p>Dim</p></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-
+          </a>
         </section>
     </section>
 
