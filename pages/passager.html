@@ -17,76 +17,28 @@
 
     <section class="main-rides-passager">
         <section class="rides">
-          <a href="#details">
-              <article class="ride">
-                    <table class="trajet-blanc">
-                        <tr>
-                            <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                        </tr>
-                        <tr>
-                            <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                        </tr>
-                        <tr>
-                            <td class="jours" colspan="2">
-                                <div class="rec">
-                                    <div class="carre-blanc"><p>Lun</p></div>
-                                    <div class="carre-blanc"><p>Mar</p></div>
-                                    <div class="carre-blanc"><p>Mer</p></div>
-                                    <div class="carre-vert"><p>Jeu</p></div>
-                                    <div class="carre-blanc"><p>Ven</p></div>
-                                    <div class="carre-vert"><p>Sam</p></div>
-                                    <div class="carre-blanc"><p>Dim</p></div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-            </article>
-          </a>
-          <a href="#details">
-            <article class="ride">
-                <table class="trajet-vert">
-                    <tr>
-                        <td class="villes">Sainte-Croix - Yverdon-les-Bains</td><td class="heure">12h34</td>
-                    </tr>
-                    <tr>
-                        <td class="dates">01.05.12 - 04.02.03</td><td class="heure">12h50</td>
-                    </tr>
-                    <tr>
-                        <td class="jours" colspan="2">
-                            <div class="rec">
-                                <div class="carre-blanc"><p>Lun</p></div>
-                                <div class="carre-blanc"><p>Mar</p></div>
-                                <div class="carre-blanc"><p>Mer</p></div>
-                                <div class="carre-vert"><p>Jeu</p></div>
-                                <div class="carre-blanc"><p>Ven</p></div>
-                                <div class="carre-vert"><p>Sam</p></div>
-                                <div class="carre-blanc"><p>Dim</p></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-          </a>
-            <!--ici-->
-          <a href="#details">
-            <article class="" ng-repeat="ride in rides" ng-class="{'white': $even, 'green': $odd}">
-                <ul>
-                    <li>{{ride.departuretown.name}} - {{ride.arrivaltown.name}}</li>
-                    <li>{{ride.startdate | date}} - {{ride.enddate | date}}</li>
-                    <li>{{ride.departure}} - {{ride.arrival}}</li>
-                </ul>
-                <div class="rec">
-                    <div class="carre-blanc"><p>Lun</p></div>
-                    <div class="carre-blanc"><p>Mar</p></div>
-                    <div class="carre-blanc"><p>Mer</p></div>
-                    <div class="carre-vert"><p>Jeu</p></div>
-                    <div class="carre-blanc"><p>Ven</p></div>
-                    <div class="carre-vert"><p>Sam</p></div>
-                    <div class="carre-blanc"><p>Dim</p></div>
-                </div>
+            <div ng-repeat="ride in rides">
+              <a href="#details/{{ride.id}}">
+                <article class="ride" ng-class="{'white': $even, 'green': $odd}">
+                    <ul>
+                        <li>{{ride.departuretown.name}} - {{ride.arrivaltown.name}}</li>
+                        <li>{{ride.startdate | date}} - {{ride.enddate | date}}</li>
+                        <li>{{ride.departure}} - {{ride.arrival}}</li>
 
-            </article>
-          </a>
+                    </ul>
+                    <div class="rec">
+                        <div class="carre-blanc"><p>Lun</p></div>
+                        <div class="carre-blanc"><p>Mar</p></div>
+                        <div class="carre-blanc"><p>Mer</p></div>
+                        <div class="carre-vert"><p>Jeu</p></div>
+                        <div class="carre-blanc"><p>Ven</p></div>
+                        <div class="carre-vert"><p>Sam</p></div>
+                        <div class="carre-blanc"><p>Dim</p></div>
+                    </div>
+
+                </article>
+              </a>
+            </div>
         </section>
     </section>
 

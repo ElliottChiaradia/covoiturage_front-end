@@ -2,9 +2,39 @@
     <!--<section class="rides" ng-controller="CountryDetailCtrl">-->
     <div class="backup-triangle"><a href="#passager"><img src="img/backLeft.png" alt="retour à l'accueil"/></a></div>
 
+    <script type="text/javascript">
 
+        var map = new google.maps.Map(document.getElementById('map_canvas'), {
+            zoom: 9,
+            
+          //  center: new google.maps.LatLng(46.822650, 6.502052),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+
+
+        });
+
+        function calcRoute(){
+            var directionsDisplay = new google.maps.DirectionsRenderer();
+            var directionsService = new google.maps.DirectionsService();
+            directionsDisplay.setMap(map);
+            //console.log(angular.element(".main-layout-details").scope().ride.departuretown.name);
+            var start = "{Suisse " + angular.element(".main-layout-details").scope().ride.departuretown.name + "}";
+            var end = "{Suisse " + angular.element(".main-layout-details").scope().ride.arrivaltown.name + "}";
+            var request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            directionsService.route(request, function(response, status){
+               if(status == google.maps.DirectionsStatus.OK){
+                   directionsDisplay.setDirections(response);
+               }
+            });
+        }
+
+    </script>
 <div class="main-layout-details">
-    <div class="map"></div>
+    <div id="map_canvas"></div>
 
     <div class="second-layout-details">
 
@@ -12,19 +42,19 @@
             <table class="tableau-details">
                 <tr>
                     <td>Conducteur</td>
-                    <td>Elliott Chiaradia</td>
+                    <td>{{ride.driver.prenom}} {{ride.driver.nom}}</td>
                 </tr>
                 <tr>
                     <td>Départ</td>
-                    <td>Sainte-Croix à 17h00</td>
+                    <td>{{ride.departuretown.name}} à {{ride.departure}}</td>
                 </tr>
                 <tr>
                     <td>Arrivée</td>
-                    <td>Aigle à 18h00</td>
+                    <td>{{ride.arrivaltown.name}} à {{ride.arrival}}</td>
                 </tr>
                 <tr>
                     <td>Description</td>
-                    <td>Nous ferons une pause de dix minutes au restauroute de Bullet</td>
+                    <td>{{ride.description}}</td>
                 </tr>
             </table>
             <table class="tableau-calendrier">
@@ -37,15 +67,15 @@
                     <td><div class="carre-noir">Ven<br/><img src="img/arrowDownBlack.png"/></div></td>
                 </tr>
                 <tr>
-                    <td>01.12.2014</td>
-                    <td><div class="carre-blanc"><p>1/4</p></div></td>
-                    <td><div class="carre-vert"><p>0/4</p></div></td>
-                    <td><div class="carre-blanc"><p>0/4</p></div></td>
-                    <td><div class="carre-vert"><p>1/4</p></div></td>
-                    <td><div class="carre-vert"><p>1/4</p></div></td>
+                    <td>{{ride.startdate | date}}</td>
+                    <td><div ng-class="{'carre-vert': ride.recurrence.monday == true, 'carre-blanc': ride.recurrence.monday == false}"><p>1/4</p></div></td>
+                    <td><div ng-class="{'carre-vert': ride.recurrence.tuesday == true, 'carre-blanc': ride.recurrence.tuesday == false}"><p>0/4</p></div></td>
+                    <td><div ng-class="{'carre-vert': ride.recurrence.wednesday == true, 'carre-blanc': ride.recurrence.wednesday == false}"><p>0/4</p></div></td>
+                    <td><div ng-class="{'carre-vert': ride.recurrence.thursday == true, 'carre-blanc': ride.recurrence.thursday == false}"><p>1/4</p></div></td>
+                    <td><div ng-class="{'carre-vert': ride.recurrence.friday == true, 'carre-blanc': ride.recurrence.friday == false}"><p>1/4</p></div></td>
                 </tr>
                 <tr>
-                    <td>01.12.2014</td>
+                    <td>{{ride.enddate | date}}</td>
                     <td><div class="carre-blanc"><p>1/4</p></div></td>
                     <td><div class="carre-blanc"><p>1/4</p></div></td>
                     <td><div class="carre-blanc"><p>0/4</p></div></td>
@@ -60,6 +90,7 @@
         </div>
     </div>
 </div>
+
     <!--<section class="main-rides-passager">
         <section class="rides">
             <article class="ride">

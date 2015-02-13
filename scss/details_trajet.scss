@@ -300,16 +300,14 @@
 
   color:$black;
 
-  .map {
-    position: relative;
+  #map_canvas {
     top:0;
     left: 0;
     width:100%;
     height:220px;
-    margin:0 auto;
-    z-index: 1;
-    background-image:url("../img/fondMap.PNG");
+    z-index:1;
   }
+
   .second-layout-details{
     position: relative;
     top: 0px;
