@@ -4,13 +4,16 @@
     <section class="main-rides">
         <h1>Tes trajets</h1>
         <section class="rides">
-            <article class="ride" ng-repeat="ride in rides" >
-                <ul class="" ng-class="{'driver': ride.isDriver, 'white': $even, 'green': $odd}">
-                    <li>{{ride.departuretown.name}} - {{ride.arrivaltown.name}}</li>
-                    <li>{{ride.startdate | date}} - {{ride.enddate | date}}</li>
-                    <li>{{ride.departure}} - {{ride.arrival}}</li>
-                </ul>
-            </article>
+
+                <article class="ride" ng-repeat="ride in rides" >
+                    <a href="#details/{{ride.id}}/tes_trajets">
+                        <ul class="" ng-class="{'driver': ride.isDriver, 'white': $even, 'green': $odd}">
+                            <li>{{ride.departuretown.name}} - {{ride.arrivaltown.name}}</li>
+                            <li>{{ride.startdate | date}} - {{ride.enddate | date}}</li>
+                            <li>{{ride.departure}} - {{ride.arrival}}</li>
+                        </ul>
+                    </a>
+                </article>
         </section>
     </section>
 </section>

@@ -1,6 +1,6 @@
 <section class="panel" ng-controller="passagerCtrl">
     <!--<section class="rides" ng-controller="CountryDetailCtrl">-->
-    <div class="backup-triangle"><a href="#home"><img src="img/backLeft.png" alt="retour à l'accueil"/></a></div>
+    <div class="backup-triangle"><a ng-href="#home"><img src="img/backLeft.png" alt="retour à l'accueil"/></a></div>
 
 
 
@@ -18,7 +18,7 @@
     <section class="main-rides-passager">
         <section class="rides">
             <div ng-repeat="ride in rides">
-              <a href="#details/{{ride.id}}">
+              <a href="#details/{{ride.id}}/passager">
                 <article class="ride" ng-class="{'white': $even, 'green': $odd}">
                     <ul>
                         <li>{{ride.departuretown.name}} - {{ride.arrivaltown.name}}</li>
