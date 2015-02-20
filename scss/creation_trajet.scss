@@ -49,6 +49,10 @@
     margin-right: 8px;
     margin-left: 8px;
   }
+  .pselect_seats{
+    margin-top:2px;
+    margin-bottom:10px;
+  }
 }
 
 .details{
@@ -58,4 +62,15 @@
   text-align: left;
   color: $black;
 
+}
+input{
+  width:100%;
+}
+
+.ng-binding{
+  color:black;
+}
+
+.select2-container{
+  width: 100%;
 }

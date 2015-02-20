@@ -10,6 +10,7 @@
         var element1Menu = "<li class='element-menu'><a href='#donnees_personnelles'>"+options.element1+"</a></li>";
         var element2Menu = "<li class='element-menu'><a href='#blog'>"+options.element2+"</a></li>";
         var element3Menu = "<li class='element-menu'><a href='#about'>"+options.element3+"</a></li>";
+        var element4Menu = "<li class='element-menu'><a ng-click='deconnexion()'>"+options.element4+"</a></li>";
 
         //building menu in DOM
         $(".panel").append($topMenu);
@@ -17,6 +18,7 @@
         $(".list-menu").append(element1Menu);
         $(".list-menu").append(element2Menu);
         $(".list-menu").append(element3Menu);
+        $(".list-menu").append(element4Menu);
 
 
         //display or hide menu on click

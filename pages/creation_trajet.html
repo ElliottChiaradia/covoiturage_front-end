@@ -7,39 +7,39 @@
             <section class="main-layout">
                 <div class="title-form pdata"><img src="img/arrowDown.png" alt="ouvrir / cacher" class="onOff-pdata"/><span class="areaTitle">localités</span></div>
                 <article class="personal-data">
-                    <label for="departure">départ</label><br>
-                    <input type="text" id="departure" name="departure" /><br>
+                    <label for="departure">départ</label><br/>
+                    <input type="hidden" id="departure"/><br/>
 
-                    <label for="arrival">destination</label><br>
-                    <input type="text" id="arrival" name="arrival" /><br>
+                    <label for="arrival">destination</label><br/>
+                    <input type="hidden" id="arrival"/><br/>
                 </article>
 
                 <div class="title-form conf"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-conf"/><span class="areaTitle">heures</span></div>
                 <article class="confidentiality">
-                    <label for="departure-time">heure de départ</label><br>
-                    <input type="time" id="departure-time" name="departure-time" /><br>
+                    <label for="departure-time">heure de départ</label><br/>
+                    <input type="time" id="departureTime" name="departureTime"  /><br/>
 
-                    <label for="arrival-time">heure d'arrivée</label><br>
-                    <input type="time" id="arrival-time" name="arrival-time" /><br>
+                    <label for="arrival-time">heure d'arrivée</label><br/>
+                    <input type="time" id="arrivalTime" name="arrivalTime" /><br/>
                 </article>
 
                 <div class="title-form notif"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-notif"/><span class="areaTitle">récurrences</span></div>
                 <article class="notifications">
                     <label for="arrival-time">jours </label>
                     <div class="rec">
-                        <div class="carre-blanc"><p>lun</p></div>
-                        <div class="carre-blanc"><p>mar</p></div>
-                        <div class="carre-blanc"><p>mer</p></div>
-                        <div class="carre-vert"><p>jeu</p></div>
-                        <div class="carre-blanc"><p>ven</p></div>
-                        <div class="carre-vert"><p>sam</p></div>
-                        <div class="carre-blanc"><p>dim</p></div>
+                        <div class="carre-blanc" ng-click="ride.recurrence.monday = ! ride.recurrence.monday ; click()" ng-class="{'carre-vert' : ride.recurrence.monday}" ><p>lun</p></div>
+                        <div class="carre-blanc" ng-click="ride.recurrence.tuesday = ! ride.recurrence.tuesday; click()" ng-class="{'carre-vert' : ride.recurrence.tuesday}" ><p>mar</p></div>
+                        <div class="carre-blanc" ng-click="ride.recurrence.wednesday = ! ride.recurrence.wednesday; click()" ng-class="{'carre-vert' : ride.recurrence.wednesday}" ><p>mer</p></div>
+                        <div class="carre-blanc" ng-click="ride.recurrence.thursday = ! ride.recurrence.thursday; click()" ng-class="{'carre-vert' : ride.recurrence.thursday}" ><p>jeu</p></div>
+                        <div class="carre-blanc" ng-click="ride.recurrence.friday = ! ride.recurrence.friday; click()" ng-class="{'carre-vert' : ride.recurrence.friday}"  ><p>ven</p></div>
+                        <div class="carre-blanc" ng-click="ride.recurrence.saturday = ! ride.recurrence.saturday; click()" ng-class="{'carre-vert' : ride.recurrence.saturday}"  ><p>sam</p></div>
+                        <div class="carre-blanc" ng-click="ride.recurrence.sunday = ! ride.recurrence.sunday; click()" ng-class="{'carre-vert' : ride.recurrence.sunday}" ><p>dim</p></div>
                     </div>
-                    <br>
+                    <br/>
 
                     <label for="arrival-time">période </label>
                     <div class="rec">
-                        <select name="periode" class="pselect">
+                        <select name="periode" class="pselect" id="periode">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -56,24 +56,41 @@
 
 
                         <div class="carre-blanc"><p>sem</p></div>
-                        <div class="carre-vert"><p>mois</p></div>
+                        <div class="carre-blanc"><p>mois</p></div>
                     </div>
 
                     <label for="startDate">du</label>
                     <input type="date" id="startDate" name="startDate" />
 
                     <label for="endDate">au</label>
-                    <input type="date" id="endDate" name="endDate" /><br>
+                    <input type="date" id="endDate" name="endDate" /><br/>
 
                 </article>
 
                 <div class="title-form det"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-details"/><span class="areaTitle">détails</span></div>
                 <article class="details">
-                    <label for="rideDescription">description</label>
-                    <textarea name="rideDescription" rows="6" cols="30" id="rideDescription"></textarea>
+                    <label for="seats">nombre de place(s) disponible(s) </label>
+                    <div class="rec">
+                        <select name="seats" class="pselect_seats" id="seats">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <label for="description">description</label>
+                    <textarea name="rideDescription" rows="6" cols="30" id="description"></textarea>
                 </article>
 
-                <input type="submit" value="enregistrer" id="save"/>
+                <input type="submit" ng-click="creation_trajet()" value="enregistrer" id="save"/>
             </section>
         </form>
     </section>
@@ -95,7 +112,7 @@
                     $(".personal-data").slideUp();
                 }
                 return false;
-            })
+            });
 
             //confidentiality
             $('.conf').click(function(){
@@ -110,7 +127,7 @@
                     //hide the div
                     $(".confidentiality").slideUp();
                 }
-            })
+            });
 
             //notifications
             $('.notif').click(function(){
@@ -125,7 +142,7 @@
                     //hide the div
                     $(".notifications").slideUp();
                 }
-            })
+            });
 
             //notifications
             $('.det').click(function(){
@@ -140,7 +157,35 @@
                     //hide the div
                     $(".details").slideUp();
                 }
-            })
+
+            });
+
+        });
+        //Search cities
+        $("#departure, #arrival").select2({
+            minimumInputLength: 2,
+            ajax: {
+                url: apiPath+'/towns',
+                dataType: 'json',
+                type: "GET",
+                quietMillis: 200,
+                data: function (term) {
+                    return {
+                        token:getToken(),
+                        q: term
+                    };
+                },
+                results: function (data) {
+                    return {
+                        results: $.map(data, function (item) {
+                            return {
+                                text: item.name,
+                                id: item.id
+                            }
+                        })
+                    };
+                }
+            }
         });
     </script>
 </section>
