@@ -30,9 +30,9 @@ app.factory('myCache', function($cacheFactory) {
 var apiPath ="https://covoiturag.cpnv-es.ch/api";
 
                         // A supprimer après test ----------------------------------------------------------------
-                         /*
-window.localStorage.setItem('userToken', 'asdf');
-window.localStorage.setItem('userId', '103');
+
+/*window.localStorage.setItem('userToken', 'OHI87ETL4AK');
+window.localStorage.setItem('userId', '4');
 var tokenValue = window.localStorage.getItem('userToken');
 
 function getToken(){
