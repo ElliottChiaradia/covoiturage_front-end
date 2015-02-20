@@ -62,25 +62,30 @@
 
   text-align: center;
 
-  .white {
-    background-color: $white;
-    opacity: $opacity;
-
-    color: $black;
-  }
-
-  .green {
-    background-color: $green;
-    opacity: $opacity;
-
-    color: $white;
-  }
-
   .rides {
     position: absolute;
     top: 70px;
     left: 8px;
     right: 8px;
+
+    .white {
+      background-color: $white;
+      opacity: $opacity;
+
+      color: $black;
+    }
+
+    .green {
+      background-color: $green;
+      opacity: $opacity;
+      .carre-blanc{
+        color: $black;
+        border: 2px solid $white;
+      }
+      .carre-vert{
+        border: 2px solid $white;
+      }
+    }
 
     .ride {
 
@@ -91,9 +96,10 @@
 
       ul {
         padding-top: 3px;
-        padding-bottom: 3px;
-
+        padding-bottom: 0;
+        padding-left: 8px;
         list-style-type: none;
+        margin-bottom: 2px;
 
         li {
           padding-top: 2px;
@@ -101,25 +107,17 @@
 
         }
       }
-
       ul li:nth-child(1) {
+        font-weight: normal;
+      }
+      ul li:nth-child(2) {
         font-weight: bold;
       }
-
-
-      .white {
-        background-color: $white;
-        opacity: $opacity;
-
-        color: $black;
+      .rec{
+        padding-left: 8px;
       }
 
-      .green {
-        background-color: $green;
-        opacity: $opacity;
 
-        color: $white;
-      }
       /* ajoute un petit volan devant le trajet */
       .driver {
         background-image: url("../img/driver.png");
@@ -433,8 +431,54 @@
 .margin-search-field{
   width:50px;
 }
+/*
+.allRides {
+  position: absolute;
+  top: 70px;
+  left: 8px;
+  right: 8px;
+
+  .oneRide {
+
+    margin-bottom: -8px;
+
+    font-size: 0.8rem;
+    text-align: left;
+
+    ul {
+      padding-top: 3px;
+      padding-bottom: 3px;
+
+      list-style-type: none;
+
+      li {
+        padding-top: 2px;
+        padding-bottom: 2px;
+
+      }
+    }
+
+    ul li:nth-child(1) {
+      font-weight: bold;
+    }
 
 
+    .white {
+      background-color: $white;
+      opacity: $opacity;
+
+      color: $black;
+    }
+
+    .green {
+      background-color: $green;
+      opacity: $opacity;
+
+      color: $white;
+    }
+  }
+}
+*/
 
 
 

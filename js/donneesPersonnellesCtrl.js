@@ -13,7 +13,7 @@ $scope.submit = function () {
     $http.put(apiPath+'/users/'+getId()+'?token='+getToken(), $scope.user).success(function(data) {
         alert("Vous données ont été mises à jour avec succès !");
     }).error(function(error){
-        alert("Une erreur est survenue. Veuillez réessayer plus tard.")
+        alert("Une erreur est survenue. Veuillez réessayer plus tard.");
     });
 };
 }]);

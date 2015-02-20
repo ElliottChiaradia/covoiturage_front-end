@@ -116,7 +116,7 @@ app.config(function($routeProvider){
        .when('/donnees_personnelles', {templateUrl: 'pages/donnees_personnelles.html',  controller: 'donneesPersonnellesCtrl'})
        .when('/about', {templateUrl: 'pages/about.html'})
        .when('/blog', {templateUrl: 'pages/blog.html'})
-       .when('/details', {templateUrl: 'pages/details_trajet.html'})
+       .when('/details/:rideId', {templateUrl: 'pages/details_trajet.html', controller: 'detailsCtrl'})
        .otherwise({redirectTo: '/home'});
 });
 mainControllers = angular.module('dataControllers',[]);
