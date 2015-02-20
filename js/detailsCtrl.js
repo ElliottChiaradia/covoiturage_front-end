@@ -1,5 +1,8 @@
 mainControllers.controller('detailsCtrl', ['$scope', '$routeParams', '$http',
     function($scope, $routeParams, $http) {
+        //on get le paramètre qui précise depuis quelle page on arrive (pour savoir sur quelle page retourner)
+        $scope.fromPage = $routeParams.fromPage;
+        console.log($routeParams.fromPage);
         //on effectue la requête http
         $http.get(apiPath + '/rides/'+$routeParams.rideId+'?token=' + getToken()).success(function (data) {
             $scope.ride = data;

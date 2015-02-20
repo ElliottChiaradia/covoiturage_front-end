@@ -1,7 +1,7 @@
-mainControllers.controller('tesTrajetsCtrl', ['$scope', '$routeParams', '$http',
-    function($scope, $routeParams, $http) {
+mainControllers.controller('tesTrajetsCtrl', ['$scope', '$routeParams', '$http', 'myCache',
+    function($scope, $routeParams, $http, myCache) {
             //on effectue la requête http
-            $http.get(apiPath + '/rides?token=' + getToken() + '&mine=true').success(function (data) {
+            $http.get(apiPath + '/rides?token=' + getToken() + '&mine=true', {cache:myCache}).success(function (data) {
                 //console.log(data);
                 $scope.rides = data;
             });

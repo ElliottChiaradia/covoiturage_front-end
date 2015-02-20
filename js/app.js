@@ -30,9 +30,9 @@ app.factory('myCache', function($cacheFactory) {
 var apiPath ="https://covoiturag.cpnv-es.ch/api";
 
                         // A supprimer après test ----------------------------------------------------------------
-                         /*
-window.localStorage.setItem('userToken', 'asdf');
-window.localStorage.setItem('userId', '103');
+
+/*window.localStorage.setItem('userToken', 'COZ55VNE7DS');
+window.localStorage.setItem('userId', '3');
 var tokenValue = window.localStorage.getItem('userToken');
 
 function getToken(){
@@ -116,7 +116,7 @@ app.config(function($routeProvider){
        .when('/donnees_personnelles', {templateUrl: 'pages/donnees_personnelles.html',  controller: 'donneesPersonnellesCtrl'})
        .when('/about', {templateUrl: 'pages/about.html'})
        .when('/blog', {templateUrl: 'pages/blog.html'})
-       .when('/details/:rideId', {templateUrl: 'pages/details_trajet.html', controller: 'detailsCtrl'})
+       .when('/details/:rideId/:fromPage', {templateUrl: 'pages/details_trajet.html', controller: 'detailsCtrl'})
        .otherwise({redirectTo: '/home'});
 });
 mainControllers = angular.module('dataControllers',[]);
