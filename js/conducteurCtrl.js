@@ -80,15 +80,13 @@ mainControllers.controller('conducteurCtrl', ['$scope', '$routeParams', '$http',
             }
             else
             {
-                alert("tout est ok");
                 //Envoie des données OK
-                /* $http.post(apiPath+'/rides/?token='+getToken(), $scope.ride).success(function(data) {
-                 alert("Le ride a été créé avec succès !");
-                 redirect();
-                 }).error(function(error){
-                 alert("Une erreur est survenue. Veuillez réessayer plus tard.");
-                 });
-                 */
+                $http.post(apiPath+'/rides/?token='+getToken(), $scope.ride).success(function(data) {
+                    alert("Le ride a été créé avec succès !");
+                    redirect();
+                }).error(function(error){
+                    alert("Une erreur est survenue. Veuillez réessayer plus tard.");
+                });
             }
 
 
