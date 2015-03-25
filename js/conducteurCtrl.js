@@ -64,8 +64,6 @@ mainControllers.controller('conducteurCtrl', ['$scope', '$routeParams', '$http',
 
             var format = "yyyy-mm-dd";
             var date=new Date();
-            //alert(date);
-
 
             if($scope.ride.startdate > $scope.ride.enddate)
             {

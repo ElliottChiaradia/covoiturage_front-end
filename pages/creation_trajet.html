@@ -11,7 +11,7 @@
                     <input type="hidden" id="departure"/><br/>
 
                     <label for="arrival">destination</label><br/>
-                    <input type="hidden" id="arrival"/><br/>
+                    <input type="hidden" id="arrival"/><br/><br/>
                 </article>
 
                 <div class="title-form conf"><img src="img/arrowRight.png" alt="ouvrir / cacher" class="onOff-conf"/><span class="areaTitle">heures</span></div>
@@ -36,28 +36,6 @@
                         <div class="carre-blanc" ng-click="ride.recurrence.sunday = ! ride.recurrence.sunday; click()" ng-class="{'carre-vert' : ride.recurrence.sunday}" ><p>dim</p></div>
                     </div>
                     <br/>
-
-                    <label for="arrival-time">période </label>
-                    <div class="rec">
-                        <select name="periode" class="pselect" id="periode">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-
-
-                        <div class="carre-blanc"><p>sem</p></div>
-                        <div class="carre-blanc"><p>mois</p></div>
-                    </div>
 
                     <label for="startDate">du</label>
                     <input type="date" id="startDate" name="startDate" />

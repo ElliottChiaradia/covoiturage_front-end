@@ -1,5 +1,4 @@
 <section class="panel">
-    <!--<section class="rides" ng-controller="CountryDetailCtrl">-->
     <div class="backup-triangle"><a href="#home"><img src="img/backLeft.png" alt="retour à l'accueil"/></a></div>
     <section class="main-rides">
         <h1>{{user.firstname}}</h1>
@@ -27,13 +26,10 @@
                     <article class="notifications">
                         <p>je suis averti par email lorsque quelqu'un ...</p>
                         <input type="checkbox" id="subscribing" name="subscribing" ng-model="user.notifications.notifRegistration" ng-checked="user.notifications.notifRegistration" />
-                        <label for="subscribing"><span></span> s'inscrit à l'un de mes trajets</label>
-                        <br><br>
-                        <input type="checkbox" id="unsubscribing" name="unsubscribing" ng-model="user.notifications.notifUnsubscribe" ng-checked="user.notifications.notifUnsubscribe"/>
-                        <label for="unsubscribing"><span></span> se désinscrit de l'un de mes trajets</label>
+                        <label for="subscribing"><span></span> modifie ses inscriptions à l'un de mes trajets</label>
                         <br><br>
                         <input type="checkbox" id="checking" name="checking" ng-model="user.notifications.notifComment" ng-checked="user.notifications.notifComment"/>
-                        <label for="checking"><span></span> valide mon inscription</label>
+                        <label for="checking"><span></span> commente mon trajet</label>
                         <br><br>
                         <input type="checkbox" id="removing" name="removing" ng-model="user.notifications.notifDeleteRide" ng-checked="user.notifications.notifDeleteRide"/>
                         <label for="removing"><span></span> supprime un des trajets auquel je suis inscrit</label>

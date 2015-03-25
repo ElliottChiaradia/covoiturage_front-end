@@ -1,5 +1,4 @@
 <section class="panel" ng-controller="tesTrajetsCtrl">
-    <!--<section class="rides" ng-controller="CountryDetailCtrl">-->
     <div class="backup"><a href="#home"><img src="img/backUp.png" alt="retour à l'accueil"/></a></div>
     <section class="main-rides">
         <h1>Tes trajets</h1>
@@ -9,7 +8,7 @@
                     <a href="#details/{{ride.id}}/tes_trajets">
                         <ul class="" ng-class="{'driver': ride.isDriver, 'white': $even, 'green': $odd}">
                             <li>{{ride.departuretown.name}} - {{ride.arrivaltown.name}}</li>
-                            <li>{{ride.startdate | date}} - {{ride.enddate | date}}</li>
+                            <li>{{ride.date | date}}</li>
                             <li>{{ride.departure}} - {{ride.arrival}}</li>
                         </ul>
                     </a>
