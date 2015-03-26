@@ -21,7 +21,7 @@
             $('<input id="registrationDates" type="hidden"/>').appendTo(el);
             base.recurrence(parameters); //Converti les jours récurrents en valeurs numériques (plus facile de travailler avec par la suite)
             base.createCalendar(parameters); //Crée le calendrier
-            base.eventsSetter(); //ajoute le comportement au cases
+            base.eventsSetter(parameters.isDriver); //ajoute le comportement au cases
         };
 
         base.recurrence = function(parameters){
@@ -81,9 +81,9 @@
                         var count = base.countRegistrationsPerDate(parameters.registrations[0], startweek, parameters.userId);
                         row+='<td>';
                         if(1 == count[1]){
-                            row+='<div class="carre-vert"><p>';
+                            row+='<div class="carre-vert notfull"><p>';
                         }else{
-                            row+='<div class="carre-blanc"><p>';
+                            row+='<div class="carre-blanc ' + (count[0]==parameters.seats ? "full" : "notfull") + '"><p>';
                         }
                         row+=count[0]+'/'+parameters.seats;
                         row+='<span class="hidden">' + startweek.getFullYear()+'-'+("0" + (startweek.getMonth() + 1)).slice(-2)+'-'+("0" + startweek.getDate()).slice(-2)+'</span>';
@@ -132,23 +132,25 @@
             return [registrationsPerDate, isRegistredThatDate];
         };
 
-        base.eventsSetter = function(){
-            //Clic sur un carré de la grille (sélectionne juste la case)
-            $(el).find("div.carre-blanc, div.carre-vert").click(function(e){
-                $(this).toggleClass("carre-vert").toggleClass("carre-blanc");
-                base.getRegistrationDates();
-            });
-            //Clic sur le triangle du haut (sélectionne la colonne complète)
-            $(el).find("div.carre-noir").click(function(e){
-                var index = $(this).parent().index() + 1;
-                $('.tableau-calendrier td:nth-child('+index+')').slice(1).find('div').attr("class", "carre-vert");
-                base.getRegistrationDates();
-            });
-            //Clic sur la column des 1er lundi des semaines (sélectionne la ligne complète)
-            $(el).find("td.semaine").click(function(e){
-                $(this).parent().children("td").slice(1).children("div").attr("class", "carre-vert");
-                base.getRegistrationDates();
-            });
+        base.eventsSetter = function(isDriver){
+            if(!isDriver){
+                //Clic sur un carré de la grille (sélectionne juste la case)
+                $(el).find("div.carre-blanc.notfull, div.carre-vert.notfull").click(function(e){
+                    $(this).toggleClass("carre-vert").toggleClass("carre-blanc");
+                    base.getRegistrationDates();
+                });
+                //Clic sur le triangle du haut (sélectionne la colonne complète)
+                $(el).find("div.carre-noir").click(function(e){
+                    var index = $(this).parent().index() + 1;
+                    $('.tableau-calendrier td:nth-child('+index+')').slice(1).find('div').attr("class", "carre-vert");
+                    base.getRegistrationDates();
+                });
+                //Clic sur la column des 1er lundi des semaines (sélectionne la ligne complète)
+                $(el).find("td.semaine").click(function(e){
+                    $(this).parent().children("td").slice(1).children("div").attr("class", "carre-vert");
+                    base.getRegistrationDates();
+                });
+            }
         };
 
         //Calcule les dates où l'utilisateur souhaite s'enregistrer et les stocke dans un input créé précédement
