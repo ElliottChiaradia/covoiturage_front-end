@@ -142,12 +142,12 @@
                 //Clic sur le triangle du haut (sélectionne la colonne complète)
                 $(el).find("div.carre-noir").click(function(e){
                     var index = $(this).parent().index() + 1;
-                    $('.tableau-calendrier td:nth-child('+index+')').slice(1).find('div').attr("class", "carre-vert");
+                    $('.tableau-calendrier td:nth-child('+index+')').slice(1).find('div.notfull').attr("class", "carre-vert");
                     base.getRegistrationDates();
                 });
                 //Clic sur la column des 1er lundi des semaines (sélectionne la ligne complète)
                 $(el).find("td.semaine").click(function(e){
-                    $(this).parent().children("td").slice(1).children("div").attr("class", "carre-vert");
+                    $(this).parent().children("td").slice(1).children("div.notfull").attr("class", "carre-vert");
                     base.getRegistrationDates();
                 });
             }
